@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
+
 
 namespace CSVQ
 {
@@ -149,32 +148,58 @@ namespace CSVQ
 
         public void display(List<People> args)
         {
+            Console.WriteLine("Count:{0}", args.Count);
             args.ForEach(i => Console.WriteLine(
                 "{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}",
-                args.Id,
-                args.FirstName,
-                args.LastName,
-                args.Company,
-                args.Address,
-                args.City,
-                args.County,
-                args.Postal,
-                args.Phone1,
-                args.Phone2,
-                args.Email,
-                args.Web));
+                i.Id,
+                i.FirstName,
+                i.LastName,
+                i.Company,
+                i.Address,
+                i.City,
+                i.County,
+                i.Postal,
+                i.Phone1,
+                i.Phone2,
+                i.Email,
+                i.Web)
+            );
         }
         public void Main()
         {
-            Console.WriteLine("Please insert filter ID:");
-            string? n=Console.ReadLine();
-            if (n != null)
+            bool filehandler = Read(@"C: \Users\nolan\Downloads\input.csv");
+            if (filehandler)
             {
-                switch (n)
+                Console.WriteLine("Please insert filter ID:");
+                string? n = Console.ReadLine();
+                if (n != null)
                 {
-                    case "1":
-
+                    switch (n)
+                    {
+                        case "1":
+                            display(Person_has_Esq_in_company());
+                            break;
+                        case "2":
+                            display(Person_lives_in_Derbyshire());
+                            break;
+                        case "3":
+                            display(Person_house_number_equals_3());
+                            break;
+                        case "4":
+                            display(Person_website_longer_than_35());
+                            break;
+                        case "5":
+                            display(Person_lives_in_specific_postcode());
+                            break;
+                        case "6":
+                            display(Person_phone1_larger_than_phone2());
+                            break;
+                        default:
+                            Console.WriteLine("Options should be in 1 to 5");
+                            break;
+                    }
                 }
+            
 
             }
             
