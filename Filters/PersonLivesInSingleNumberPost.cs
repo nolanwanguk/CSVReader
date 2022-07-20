@@ -1,36 +1,29 @@
 ﻿using CSVQ.Model;
-using CSVQ.Utility;
+
 namespace CSVQ.Filters;
 
-public class PersonLivesInSingleNumberPost:IBasicFilter
+public class PersonLivesInSingleNumberPost : IBasicFilter
 {
     public List<Person>? Results { get; set; }
     public int Counts { get; set; }
 
-    public List<Person>? Transform(List<Person> lists)
+    public void Transform(List<Person> lists)
     {
-        return Results;
     }
 
     public List<Person>? FilterFunc(List<Person> lists)
     {
-        var results = lists.FindAll(pp => Char.IsLetter(pp.Postal.Split()[0][pp.Postal.Split()[0].Length-1]) && !Char.IsLetter(pp.Postal.Split()[0][pp.Postal.Split()[0].Length - 2]));
+        var results = lists.FindAll(pp =>
+            char.IsLetter(pp.Postal.Split()[0][pp.Postal.Split()[0].Length - 1]) &&
+            !char.IsLetter(pp.Postal.Split()[0][pp.Postal.Split()[0].Length - 2]));
+        Transform(results);
         Results = results;
         Counts = results.Count;
-        return results;
-    }
-
-    public List<Person>? Cleanup(List<Person> lists)
-    {
+        Cleanup(results);
         return Results;
     }
 
-    public void Show()
+    public void Cleanup(List<Person> lists)
     {
-        Console.WriteLine("Counts:{0}", Counts);
-        if (Counts > 0)
-        {
-            Display.Display_in_Console(Results);
-        }
     }
 }

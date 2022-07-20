@@ -1,5 +1,4 @@
 ﻿using CSVQ.Model;
-using CSVQ.Utility;
 
 namespace CSVQ.Filters;
 
@@ -8,30 +7,21 @@ public class PersonLivesInDerbyshire : IBasicFilter
     public List<Person>? Results { get; set; }
     public int Counts { get; set; }
 
-    public List<Person>? Transform(List<Person> lists)
+    public void Transform(List<Person> lists)
     {
-        return Results;
     }
 
     public List<Person>? FilterFunc(List<Person> lists)
     {
         var results = lists.FindAll(pp => pp.City.ToLower().Contains("derbyshire"));
+        Transform(results);
         Results = results;
         Counts = results.Count;
-        return results;
-    }
-
-    public List<Person>? Cleanup(List<Person> lists)
-    {
+        Cleanup(Results);
         return Results;
     }
 
-    public void Show()
+    public void Cleanup(List<Person> lists)
     {
-        Console.WriteLine("Counts:{0}", Counts);
-        if (Counts > 0)
-        {
-            Display.Display_in_Console(Results);
-        }
     }
 }
