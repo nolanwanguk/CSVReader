@@ -1,7 +1,4 @@
 ﻿using CSVQ.Model;
-using CSVQ.Utility;
-using CsvHelper;
-using System;
 using System.Globalization;
 
 namespace CSVQ.IO;
@@ -15,11 +12,9 @@ public class CSVHelperReader:BasicReader
         using (var reader = new StreamReader(path))
         using (var csv = new CsvHelper.CsvReader(reader, CultureInfo.InvariantCulture))
         {
-            csv.Read();
-            csv.ReadHeader();
-            while (csv.Read())
+            var records = csv.GetRecords<Person>();
+            foreach (var record in records)
             {
-                var record = csv.GetRecord<Person>();
                 Qresults.Add(record);
             }
         }
