@@ -5,7 +5,11 @@ namespace CSVQ.IO;
 
 public class CSVHelperReader : BasicReader
 {
-    public List<Person> Qresults = new();
+    /// <summary>
+    /// Read local csv file by CsvHelper package
+    /// and store data in a List of Person record which defined in CSVQ.Model
+    /// </summary>
+    public List<Person> Qresults = new(); // final list results for public accessing
 
     public override void BeforeRead()
     {

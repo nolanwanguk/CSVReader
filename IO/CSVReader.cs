@@ -5,6 +5,10 @@ namespace CSVQ.IO;
 
 public class CsvReader : BasicReader
 {
+    /// <summary>
+    /// Read csv file by System.IO and parse data into list of Person records
+    /// TODO: Fix issue for quote columns
+    /// </summary>
     private List<string> _content = new();
     public List<Person> Qresults = new();
 
