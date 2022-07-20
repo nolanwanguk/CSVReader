@@ -14,7 +14,9 @@ public class CsvReader : BasicReader
 
     public override void Reader(string path)
     {
+        BeforeRead();
         _content = File.ReadAllLines(path).ToList();
+        AfterRead();
     }
 
     public override void AfterRead()
