@@ -7,5 +7,4 @@ public record Person(int Id, string FirstName, string LastName, string Company, 
 {
     public int[] PhoneNumbers { get; init; } =
         new int[2] { ReFormat.Phone_To_Num(Phone1), ReFormat.Phone_To_Num(Phone2) };
-    
-};
+}
