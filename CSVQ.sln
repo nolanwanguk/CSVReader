@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVQ", "CSVQ.csproj", "{0BB97F8F-FE35-4AC1-A625-422455404A17}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSVQ.Tests", "CSVQ.Tests", "{1B7030B4-64BB-4372-8424-6B1F9A9328FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVQ", "CSVQ.csproj", "{773C6E07-069B-4B0D-8ECE-03EDABB85609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,15 +11,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0BB97F8F-FE35-4AC1-A625-422455404A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BB97F8F-FE35-4AC1-A625-422455404A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BB97F8F-FE35-4AC1-A625-422455404A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BB97F8F-FE35-4AC1-A625-422455404A17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773C6E07-069B-4B0D-8ECE-03EDABB85609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773C6E07-069B-4B0D-8ECE-03EDABB85609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773C6E07-069B-4B0D-8ECE-03EDABB85609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773C6E07-069B-4B0D-8ECE-03EDABB85609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773C6E07-069B-4B0D-8ECE-03EDABB85609}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DEDAEF2-990E-4C5A-9614-829430D3D336}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
