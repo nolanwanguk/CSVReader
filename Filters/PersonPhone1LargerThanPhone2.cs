@@ -14,7 +14,7 @@ public class PersonPhone1LargerThanPhone2:IBasicFilter
 
     public List<Person>? FilterFunc(List<Person> lists)
     {
-        var results = lists.FindAll(pp => pp.PhoneNumbers[0]>pp.PhoneNumbers[1]);
+        var results = lists.FindAll(pp => pp.Phone1>pp.Phone2);
         Results = results;
         Counts = results.Count;
         return results;
