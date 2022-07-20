@@ -7,7 +7,7 @@ public class ReFormat
         num = num.Replace("-", "");
         try
         {
-            int result=Convert.ToInt32(num);
+            var result = Convert.ToInt32(num);
             return result;
         }
         catch
