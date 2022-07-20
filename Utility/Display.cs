@@ -1,9 +1,11 @@
-﻿namespace CSVQ.Utility;
+﻿using CSVQ.Model;
+
+namespace CSVQ.Utility;
 
 public class Display
 {
-    public void Display_in_Console(List<Enum> lists)
+    public static void Display_in_Console(List<Person>? lists)
     {
-        lists.ForEach(i => Console.WriteLine(i.ToString()));
+        lists?.ForEach(i => Console.WriteLine(i.ToString()));
     }
 }
